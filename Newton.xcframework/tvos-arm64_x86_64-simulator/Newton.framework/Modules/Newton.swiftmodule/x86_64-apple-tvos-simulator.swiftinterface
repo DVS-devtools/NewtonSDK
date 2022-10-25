@@ -1,0 +1,535 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-tvos11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Newton
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var modelName: Swift.String {
+    get
+  }
+}
+public typealias NWCallback = (_ error: NWError?, _ params: [Swift.String : Any]?) -> ()
+extension Newton {
+  final public func sendEvent(name: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func timedEventStart(name: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func timedEventStop(name: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func flowBegin(name: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func flowStep(name: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func flowSucceed(reason: Swift.String = "ok", customData: NWSimpleObject? = nil) throws
+  final public func flowFail(reason: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func flowCancel(reason: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func isTimedEventRunning(name: Swift.String) -> Swift.Bool
+  final public func isAnalyticFlowBegun() -> Swift.Bool
+  final public func getCurrentAnalyticFlowName() throws -> Swift.String
+  final public func rankContent(contentId: Swift.String, scope: RankingScope, multiplier: Swift.Float = 1.0) throws
+  final public func attachMasterSession(masterSessionId: Swift.String, masterUserId: Swift.String, customData: NWSimpleObject? = nil) throws
+  final public func attachSession(attachedSessionId: Swift.String, attachedUserId: Swift.String?, attachType: AttachType, customData: NWSimpleObject? = nil) throws
+  final public func flushEvents(flushCallback callback: (_ error: NWError?, _ params: [Swift.String : Any]?) -> ())
+}
+extension DefaultsKey {
+  public static let app_installed: Key<Swift.Bool>
+  public static let autologintoken: Key<Newton.AutoLoginToken>
+  public static let isStartFlag: Key<Swift.Bool>
+}
+@_hasMissingDesignatedInitializers public class DefaultsKey {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class Key<ValueType> : DefaultsKey where ValueType : Swift.Decodable, ValueType : Swift.Encodable {
+  public init(_ key: Swift.String)
+  @objc deinit
+}
+final public class NWDefault {
+  public static let shared: NWDefault
+  public init(userDefaults: Foundation.UserDefaults = UserDefaults.standard)
+  final public func clear<ValueType>(_ key: Key<ValueType>) where ValueType : Swift.Decodable, ValueType : Swift.Encodable
+  final public func has<ValueType>(_ key: Key<ValueType>) -> Swift.Bool where ValueType : Swift.Decodable, ValueType : Swift.Encodable
+  final public func get<ValueType>(for key: Key<ValueType>) -> ValueType? where ValueType : Swift.Decodable, ValueType : Swift.Encodable
+  final public func set<ValueType>(_ value: ValueType, for key: Key<ValueType>) where ValueType : Swift.Decodable, ValueType : Swift.Encodable
+  final public func removeAll(bundle: Foundation.Bundle = Bundle.main)
+  @objc deinit
+}
+extension NWDefault {
+  final public func get<ValueType>(for key: Key<ValueType>) -> ValueType? where ValueType : Swift.Decodable, ValueType : Swift.Encodable, ValueType : Swift.RawRepresentable, ValueType.RawValue : Swift.Decodable, ValueType.RawValue : Swift.Encodable
+  final public func set<ValueType>(_ value: ValueType, for key: Key<ValueType>) where ValueType : Swift.Decodable, ValueType : Swift.Encodable, ValueType : Swift.RawRepresentable, ValueType.RawValue : Swift.Decodable, ValueType.RawValue : Swift.Encodable
+}
+public enum LocalErrorCodes : Swift.String {
+  case NewtonNotInitialized
+  case NewtonInitializationError
+  case SimpleObjectCreationError
+  case SimpleObjectSerializationError
+  case EventCreationError
+  case EventFlowInconsistance
+  case EventTimedInconsistance
+  case EventAnalyticError
+  case InvalidQueueHandler
+  case StorageError
+  case InvalidFunctionCalled
+  case InvalidEvent
+  case AnalyticError
+  case ConnectionInitError
+  case ConnectionError
+  case ConnectionResponseError
+  case ConnectionValidationError
+  case ConnectionDomainWarning
+  case QueueError
+  case LoginBuilderError
+  case LoginFlowUnknownError
+  case InvalidLoginFlowResponse
+  case InvalidForgotFlowResponse
+  case OAuthError
+  case UserMetaInfoSerializationError
+  case UserMetaInfoError
+  case AutologinError
+  case AutologinServerError
+  case AutologinTokenExpired
+  case AutologinTokenInvalid
+  case AutologinInternalError
+  case LogoutError
+  case NotificationError
+  case SyncUserStateError
+  case UserDeleteError
+  case PushNotificationError
+  case PushNotificationDeviceRegistrationError
+  case MSISDNLoginError
+  case MSISDNLoginWrongPINError
+  case MSISDNError
+  case MSISDNForgotError
+  case MSISDNForgotMaxPINReachedError
+  case MSISDNUserRecognitionFailed
+  case EMAILLoginWrongPasswordError
+  case EMAILLoginError
+  case EMAILForgotWrongEmailError
+  case EMAILForgotError
+  case EMAILResendError
+  case EMAILSignupLoginMandatoryConfirmError
+  case EMAILSignupLoginIdentityError
+  case MFPLoginError
+  case MFPLoginWrongFingerprint
+  case UO2CredentialsLoginError
+  case IdentityBuilderError
+  case IdentityFlowUnknownError
+  case IdentityFlowError
+  case AddEmailIdentityFlowError
+  case PaymentSerializationError
+  case InvalidUserToken
+  case PaymentItemAlreadyPaid
+  case PaymentError
+  public static func == (left: Swift.String, right: LocalErrorCodes) -> Swift.Bool
+  public static func == (left: LocalErrorCodes, right: Swift.String) -> Swift.Bool
+  public static func != (left: Swift.String, right: LocalErrorCodes) -> Swift.Bool
+  public static func != (left: LocalErrorCodes, right: Swift.String) -> Swift.Bool
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NewtonErrorCodes : Swift.String {
+  case WRONG_EMAIL_PASSWORD
+  case WRONG_PIN
+  case ITEM_ALREADY_PAID
+  case MANDATORY_CONFIRM
+  case IDENTITY_ALREADY_USED
+  case WRONG_IDENTITY
+  case MAX_PIN_LIMIT_REACHED
+  case OFFER_PAYMENT_USER_MISMATCH
+  public static func == (left: Swift.String, right: NewtonErrorCodes) -> Swift.Bool
+  public static func == (left: NewtonErrorCodes, right: Swift.String) -> Swift.Bool
+  public static func != (left: Swift.String, right: NewtonErrorCodes) -> Swift.Bool
+  public static func != (left: NewtonErrorCodes, right: Swift.String) -> Swift.Bool
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NWError : Swift.Error, Swift.Equatable {
+  public static func == (lhs: NWError, rhs: NWError) -> Swift.Bool
+  case NewtonError(code: Swift.String, message: Swift.String, statusCode: Swift.Int, extra: [Swift.String : Any]? = nil)
+  case LocalError(code: LocalErrorCodes, message: Swift.String, error: Swift.Error? = nil, extra: [Swift.String : Any]? = nil)
+  public var description: Swift.String {
+    get
+  }
+  public static func isNotNewtonError(value: Swift.Error) -> Swift.Bool
+}
+@objc public class RankingScope : ObjectiveC.NSObject {
+  public enum _RankingScope : Swift.String {
+    case consumption
+    case social
+    case editorial
+    case unknown
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(scope: RankingScope._RankingScope)
+  @objc deinit
+}
+public enum AttachType : Swift.String {
+  case master
+  case peer
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NWExternalParameterKey : Swift.Hashable {
+  case DistributionGroup
+  case Custom(Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: NWExternalParameterKey, b: NWExternalParameterKey) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class NWIdentityBuilder {
+  public func setEmail(email: Swift.String) -> NWIdentityBuilder
+  public func setPassword(password: Swift.String) -> NWIdentityBuilder
+  public func setProductEmailParams(params: NWSimpleObject) -> NWIdentityBuilder
+  public func setSMSTemplate(smsTemplate: Swift.String) -> NWIdentityBuilder
+  public func setOnFlowCompleteCallback(callback: @escaping FlowCompleteCallback) -> NWIdentityBuilder
+  public func getAddEmailIdentityFlow() throws -> NWAddEmailIdentityFlow
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWAddEmailIdentityFlow {
+  public func startIdentityFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWIdentityManager {
+  public func getIdentityBuilder() -> NWIdentityBuilder
+  @objc deinit
+}
+public typealias FlowCompleteCallback = (_ error: NWError?) -> ()
+@_hasMissingDesignatedInitializers public class NWLoginBuilder {
+  public func setOnFlowCompleteCallback(callback: @escaping FlowCompleteCallback) -> NWLoginBuilder
+  public func setCustomData(cData: NWSimpleObject) -> NWLoginBuilder
+  public func setAllowCustomLoginSession() -> NWLoginBuilder
+  public func setCustomID(customId: Swift.String) -> NWLoginBuilder
+  public func getCustomLoginFlow() throws -> NWCustomLoginFlow
+  public func setAccessToken(token: Swift.String) -> NWLoginBuilder
+  public func setOAuthClientID(clientId: Swift.String) -> NWLoginBuilder
+  public func setReturnUrl(url: Swift.String) -> NWLoginBuilder
+  public func setWaitingUrl(url: Swift.String) -> NWLoginBuilder
+  public func setErrorUrl(url: Swift.String) -> NWLoginBuilder
+  public func setEmail(email: Swift.String) -> NWLoginBuilder
+  public func setPassword(password: Swift.String) -> NWLoginBuilder
+  public func setProductEmailParams(params: NWSimpleObject) -> NWLoginBuilder
+  public func setUserProperties(userProperties: NWSimpleObject) -> NWLoginBuilder
+  public func getEmailLoginFlow() throws -> NWEmailPasswordLoginFlow
+  public func getEmailForgotFlow() throws -> NWEmailForgotFlow
+  public func getEmailResendFlow() throws -> NWEmailResendFlow
+  public func getEmailSignupFlow() throws -> NWEmailSignupLoginFlow
+  public func setMSISDN(msisdn: Swift.String) -> NWLoginBuilder
+  public func setSMSTemplate(smsTemplate: Swift.String) -> NWLoginBuilder
+  public func setPIN(pin: Swift.String) -> NWLoginBuilder
+  public func setNOPIN() -> NWLoginBuilder
+  public func getMSISDPINLoginFlow() throws -> NWMSISDNPINLoginFlow
+  public func getMSISDNURLoginFlow() throws -> NWMSISDNUserRecognitionLoginFlow
+  public func setExternalID(externalId: Swift.String) -> NWLoginBuilder
+  public func getExternalLoginFlow() throws -> NWExternalLoginFlow
+  public func setOfferId(offerId: Swift.String) -> NWLoginBuilder
+  public func getPaymentReceiptLoginFlow() throws -> NWPaymentReceiptLoginFlow
+  public func setPony(pony: Swift.String) -> NWLoginBuilder
+  public func getMFPLoginFlow() throws -> NWMFPLoginFlow
+  public func setDadanetUser(dadanetUser: Swift.String) -> NWLoginBuilder
+  public func setInfoUtente(infoUtente: Swift.String) -> NWLoginBuilder
+  public func getUO2CredentialsLoginFlow() throws -> NWUO2CredentialsLoginFlow
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWLoginFlowBase {
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWCustomLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWEmailPasswordLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWEmailForgotFlow : NWLoginFlowBase {
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWEmailResendFlow : NWLoginFlowBase {
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWEmailSignupLoginFlow : NWLoginFlowBase {
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWMSISDNPINLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  public func startForgotFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWMSISDNUserRecognitionLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWExternalLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWPaymentReceiptLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWMFPLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NWUO2CredentialsLoginFlow : NWLoginFlowBase {
+  override public var description: Swift.String {
+    get
+  }
+  public func startLoginFlow()
+  @objc deinit
+}
+public typealias NotificationCallback = (NWError?, Foundation.Notification) -> Swift.Void
+public enum NWNotification : Swift.String {
+  case UserLoginStateChanged
+  case AnalyticEventAdded
+  case AnalyticEventsFlushed
+  case PushNotificationReceived
+  case UIApplicationWillTerminateNotification
+  case UIApplicationDidFinishLaunchingNotification
+  public func addNamedObserver(name: Swift.String, senderObject object: Swift.AnyObject?, callback: @escaping NotificationCallback)
+  public func clearObserver(name: Swift.String)
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ProviderExtra {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct TypeExtra {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct PaymentReceiptObject {
+  public var description: Swift.String {
+    get
+  }
+  public var nextBillingDate: Foundation.Date? {
+    get
+  }
+  public var lastBillingDate: Foundation.Date? {
+    get
+  }
+  public var startBillingDate: Foundation.Date? {
+    get
+  }
+  public var mnoCountry: Swift.String? {
+    get
+  }
+  public var mnoOperator: Swift.String? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class NWPaymentObject {
+  final public let isPaying: Swift.Bool
+  public var paymentReceipt: PaymentReceiptObject?
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public typealias GetOfferForCallback = (_ error: NWError?, _ offerId: Swift.String?) -> ()
+public typealias AddPaymentCallback = (_ error: NWError?) -> ()
+public typealias IsUserPayingCallback = (_ error: NWError?, _ paymentObject: NWPaymentObject?) -> ()
+public enum MarketPlace : Swift.String {
+  case GooglePlay
+  case AppleStore
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class NWPaymentManager {
+  public func serializePayment(withOffer offerId: Swift.String, receiptUrl url: Foundation.URL? = nil) throws -> Swift.String
+  public func getOfferFor(nativeItem nativeItemId: Swift.String, marketplace: MarketPlace = .AppleStore, callback: @escaping GetOfferForCallback)
+  public func addPayment(withOffer offerId: Swift.String, receiptUrl url: Foundation.URL? = nil, callback: @escaping AddPaymentCallback)
+  public func isUserPayingForDefault(callback: @escaping IsUserPayingCallback)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class NWPushBase : ObjectiveC.NSObject {
+  final public let shown: Swift.Bool
+  final public let isLocal: Swift.Bool
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class NWStandardPush : NWPushBase {
+  final public let customFields: NWSimpleObject?
+  final public let body: Swift.String
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class NWUrlPush : NWStandardPush {
+  final public let url: Foundation.URL
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class NWBackgroundPush : NWPushBase {
+  final public let customFields: NWSimpleObject
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public class NWSimpleObject : ObjectiveC.NSObject, Foundation.NSCoding {
+  public static let MAX_STR_LENGTH: Swift.Int
+  public static let MAX_SO_SIZE: Swift.Int
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init?(fromDictionary dict: [Swift.String : Any])
+  convenience public init?(fromJSONString jsonStr: Swift.String)
+  public func toJSONString() throws -> Swift.String
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public func setString(key: Swift.String, value: Swift.String) throws
+  public func setInt(key: Swift.String, value: Swift.Int) throws
+  public func setFloat(key: Swift.String, value: Swift.Float) throws
+  public func setDouble(key: Swift.String, value: Swift.Double) throws
+  public func setBool(key: Swift.String, value: Swift.Bool) throws
+  public func setNull(key: Swift.String) throws
+  public func getDictionary() -> [Swift.String : Any]
+  @objc deinit
+}
+public protocol UserStateChangeListener : AnyObject {
+  func onLoginStateChange(error: NWError?)
+}
+@objc @_hasMissingDesignatedInitializers public class NWUserMetaInfo : ObjectiveC.NSObject {
+  public func isExpired() -> Swift.Bool
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct AutoLoginToken : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public typealias MetaInfoCallback = (_ error: NWError?, _ metaInfo: [Swift.String : Any]?) -> ()
+public typealias SyncStateCallback = (_ error: NWError?) -> ()
+public typealias UserDeleteCallback = (_ error: NWError?) -> ()
+public typealias GenerateTransientTokenCallback = (_ error: NWError?, _ token: Swift.String?) -> ()
+@objc @_hasMissingDesignatedInitializers final public class Newton : ObjectiveC.NSObject {
+  public static let versionString: Swift.String
+  public static let buildNumber: Swift.Int
+  final public var environmentString: Swift.String {
+    get
+  }
+  final public class func getSharedInstanceWithConfig(conf: Swift.String, customData: NWSimpleObject? = nil, dictParameters: [NWExternalParameterKey : Any]? = nil) throws -> Newton
+  final public class func getSharedInstance() throws -> Newton
+  final public func setDistributionGroup(distributionGroup: Swift.String)
+  final public func unSetDistributionGroup()
+  final public func getLoginBuilder() -> NWLoginBuilder
+  final public func finalizeLoginFlow()
+  final public func getUserToken() -> Swift.String
+  final public func isUserLogged() -> Swift.Bool
+  final public func getUserMetaInfo(callback: @escaping MetaInfoCallback)
+  final public func userLogout()
+  final public func setOnUserStateChangeListener(listener: UserStateChangeListener)
+  final public func syncUserState(callback: @escaping SyncStateCallback)
+  final public func __temporaryUserDelete(callback: @escaping UserDeleteCallback)
+  @objc deinit
+  final public func getPaymentManager() throws -> NWPaymentManager
+  final public func getIdentityManager() throws -> NWIdentityManager
+  final public func getSessionId() -> Swift.String
+  final public func generateTransientToken(callback: @escaping GenerateTransientTokenCallback) throws
+}
+extension LocalErrorCodes : Swift.Equatable {}
+extension LocalErrorCodes : Swift.Hashable {}
+extension LocalErrorCodes : Swift.RawRepresentable {}
+extension NewtonErrorCodes : Swift.Equatable {}
+extension NewtonErrorCodes : Swift.Hashable {}
+extension NewtonErrorCodes : Swift.RawRepresentable {}
+extension RankingScope._RankingScope : Swift.Equatable {}
+extension RankingScope._RankingScope : Swift.Hashable {}
+extension RankingScope._RankingScope : Swift.RawRepresentable {}
+extension AttachType : Swift.Equatable {}
+extension AttachType : Swift.Hashable {}
+extension AttachType : Swift.RawRepresentable {}
+extension NWCustomLoginFlow : Swift.CustomStringConvertible {}
+extension NWEmailPasswordLoginFlow : Swift.CustomStringConvertible {}
+extension NWEmailForgotFlow : Swift.CustomStringConvertible {}
+extension NWEmailResendFlow : Swift.CustomStringConvertible {}
+extension NWEmailSignupLoginFlow : Swift.CustomStringConvertible {}
+extension NWMSISDNPINLoginFlow : Swift.CustomStringConvertible {}
+extension NWMSISDNUserRecognitionLoginFlow : Swift.CustomStringConvertible {}
+extension NWExternalLoginFlow : Swift.CustomStringConvertible {}
+extension NWPaymentReceiptLoginFlow : Swift.CustomStringConvertible {}
+extension NWMFPLoginFlow : Swift.CustomStringConvertible {}
+extension NWUO2CredentialsLoginFlow : Swift.CustomStringConvertible {}
+extension NWNotification : Swift.Equatable {}
+extension NWNotification : Swift.Hashable {}
+extension NWNotification : Swift.RawRepresentable {}
+extension MarketPlace : Swift.Equatable {}
+extension MarketPlace : Swift.Hashable {}
+extension MarketPlace : Swift.RawRepresentable {}
+extension NWPushBase : Foundation.NSCoding {}
+extension NWStandardPush : Foundation.NSCoding {}
+extension NWUrlPush : Foundation.NSCoding {}
+extension NWBackgroundPush : Foundation.NSCoding {}
+extension NWUserMetaInfo : Foundation.NSCoding {}

@@ -1,0 +1,4 @@
+framework module Newton {
+  header "Newton-Swift.h"
+  requires objc
+}
