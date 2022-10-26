@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Newton-Swift.h</key>
 		<data>
-		S3f7TIkMXhxxzE7xdt9V6kdVAI0=
+		7LIlaB7RxuXk04m4LSieWWkBy4Q=
 		</data>
 		<key>ISO639.plist</key>
 		<data>
@@ -14,47 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rFAjCsNAS0dW8AJJpu32XtvgVYE=
-		</data>
-		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
-		<data>
-		q5k3BUB8hJxhqDqXUdSG/lK0JoM=
-		</data>
-		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
-		<data>
-		YNOhzmWfQN9AEiYVRN8u3gBHUgY=
+		FFM/z6l+u/BPzPp3kVC0bd8iuNo=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		TUPGuaqzYQPGS/lrs+RVJ1qd5/Y=
+		HWiQJs3ISRML/2fC5oLuPKblXFY=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		YNOhzmWfQN9AEiYVRN8u3gBHUgY=
+		3m7LxCfV1Cg5IpGbVM3ki1fYm6k=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		CnaCjXjInrugelRrQyubRtqKMCw=
-		</data>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
-		<data>
-		q5k3BUB8hJxhqDqXUdSG/lK0JoM=
-		</data>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
-		<data>
-		FdOYBwM7D+aqnbnTo+8uEvHgk+E=
+		fR1WoloMtR7kPT66tkFKdSvRm4M=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		i5xlG+oAZ2Ra/J45mF4KN64mkKk=
+		LMDlgFILiY4mfIbElnuS48Sc6gc=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		FdOYBwM7D+aqnbnTo+8uEvHgk+E=
+		Mvp0idLWu/MHiK7Wlx/5/HX66e8=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		PsoBKb0o862cwuKb+ziDszh9Wzs=
+		XSmLQijI79Csbgskvy3HLrL2n1I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s67hQaS1VeHgZHuz+ggzCKvQE9ISMWzHgKPkVMtK0cs=
+			FD0mgUaPN0NC5uI1BmovuNQaEGo0upFK9u8lhoHEWL0=
 			</data>
 		</dict>
 		<key>ISO639.plist</key>
@@ -77,74 +61,46 @@
 			ByCES+BV6QBbS34Q7TiNZi1sqsahkBxnqu6luzd3KZ8=
 			</data>
 		</dict>
-		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			IibnbJ5IELz7YCYhVEmVzSvT1nw8X1HrRpWzXMJ/t8g=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XV/h6641MJg/IpkMp+QsZPLhV5mWoOLfhaGP3AL5Qr4=
-			</data>
-		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YkrjnBTh2c03gmMTPVvLlun+bDSQf/r4rt1JzXTJNe0=
+			IdPIwtdBz4Y4rOpPeJIkvoSwUO0xNPe5bi/ybfQc/CE=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XV/h6641MJg/IpkMp+QsZPLhV5mWoOLfhaGP3AL5Qr4=
+			vFWAOCnDvQqxbUE3Wnfwlyst73YPZoHu+I8IS2ufTUU=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3wvad4Y6n1n4eyOVto90MGQ/XaNkVmeqAZZ1aw4n6Ns=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			IibnbJ5IELz7YCYhVEmVzSvT1nw8X1HrRpWzXMJ/t8g=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			on3JWPQYxSY5bzWDXXtbTFpWJWqRKe0sYVcJmMqYuGA=
+			VqQ+LO/PXi7FkPVjQMzaDZiTCvS/xrdBY+qH+h+fIbY=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t/mLYfFI3xKd8b3w4NinngSH62RWdd6wDo+/xKwMZIM=
+			SfKgZk1xTHwU6+1UzdMRuvfSRbVfzx+AMKTkEAnZtAM=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			on3JWPQYxSY5bzWDXXtbTFpWJWqRKe0sYVcJmMqYuGA=
+			7GmuP/cZ6sbfzOWCNDyQWKuSSdxq03iGQ2Yx4Fqu01s=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/qeIBtznNtCImfBccbLPHRVU0FZ90o76IV8AI2hO3Yk=
+			avrzKuheRpbB7POMY5DPaB+1H81QRoqEP2bkUxeMZ4U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

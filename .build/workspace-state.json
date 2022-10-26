@@ -1,0 +1,23 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "packageRef" : {
+          "identity" : "newtonsdk",
+          "kind" : "root",
+          "location" : "/Users/alessio/Work/NewtonSDK",
+          "name" : "NewtonSDK"
+        },
+        "path" : "/Users/alessio/Work/NewtonSDK/Newton.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "Newton"
+      }
+    ],
+    "dependencies" : [
+
+    ]
+  },
+  "version" : 5
+}

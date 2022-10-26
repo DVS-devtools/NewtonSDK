@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Newton-Swift.h</key>
 		<data>
-		h6+dAUTd6XmN52wqz+LtqmPSuts=
+		IMhEy6lJh/8ScNMgllcrgIFog2w=
 		</data>
 		<key>ISO639.plist</key>
 		<data>
@@ -14,47 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kANs0P2lkNBCt3/TXXSlKT/jqtY=
-		</data>
-		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
-		<data>
-		cHJGzAI2cy9IFWI8WAHnK2Pb6fE=
-		</data>
-		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
-		<data>
-		ZnQk+McEXtscGX2isNkQ1OGB27Q=
+		/RuUFC3GPDLegWXPYYgEB4hWRwI=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		3KN+xxmxZkhrcKH32vd5+bVdHhM=
+		Rkigp2AUuZnVjtVMSksg2O95mCg=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZnQk+McEXtscGX2isNkQ1OGB27Q=
+		slanpG5kJIlR4Lg4BJ/qzKXWdqE=
 		</data>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		3isPyhU/8Lx6IuQjDrb/qKy/ZAQ=
-		</data>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<data>
-		cHJGzAI2cy9IFWI8WAHnK2Pb6fE=
-		</data>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<data>
-		XYSPXnruaEy8sv2ZUyHGRvIiIKs=
+		gV/wQKpZx8kYRz/4K599BXdSj6c=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HCfb4pGiGykchUgR+qk0CxB18xs=
+		xS4wskDk4LT8nYPDrc9RWbe1bNk=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XYSPXnruaEy8sv2ZUyHGRvIiIKs=
+		YaOKx0IbxtZpAPXDaP3qpjGfWvo=
 		</data>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4/UuNYOzCKktLrl+lcEPvWMgcVw=
+		R76X3Siq8rBjqsmICiAnSraPTWM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WZoKMXCsVnwtXKgClZAeA2LY4zHIPQvCY7yWfM2a31g=
+			lzFqbuRiencqHpD2D4CArWoQAT5g2/FMVA0RBQFiA7s=
 			</data>
 		</dict>
 		<key>ISO639.plist</key>
@@ -77,74 +61,46 @@
 			ByCES+BV6QBbS34Q7TiNZi1sqsahkBxnqu6luzd3KZ8=
 			</data>
 		</dict>
-		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vi/TpBKZeaVMRIoyKLyZbcC1hfPR9uUzCksZ9zKIZY8=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			O3jpPeGdFfxrf+Vv+e7meSO4Y65fI07/28We6Yp3RqA=
-			</data>
-		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Is9SANtvVGUJ8yy4q4ixdNbY3lOLC/WtBG79gDBrooQ=
+			RtGK5FZ5i+D7Ymk3Jj9sQDN8p6GGB0TDUP5atC/mRAQ=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O3jpPeGdFfxrf+Vv+e7meSO4Y65fI07/28We6Yp3RqA=
+			LHbfRawur9Lr6SRfXTWVX/fkX8uPaZ92iMP4aCkhwfo=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nUFjEPJj19cIVeUEVQP0CSBzegsAG/BSYqx5cMVGunQ=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vi/TpBKZeaVMRIoyKLyZbcC1hfPR9uUzCksZ9zKIZY8=
-			</data>
-		</dict>
-		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Dv6k1KIiztRVDN5COO0VgT1L3lsS549dlJeSXIwzsNQ=
+			UN9B8IwN5je8YJFajIDAt6UopwpprQkiE1fb7LTRYGo=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GzqIChklWkfuY7Z+kCx0fX9lsXBwvv41kLSx02yDs+s=
+			xt5IEBu9OSf6anTo7DdJB9Qmx+Fy9zdgULfSoI79nLI=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dv6k1KIiztRVDN5COO0VgT1L3lsS549dlJeSXIwzsNQ=
+			hePBB5QqxXFyiQ25PegiDDARbOKslycqOvWSVbwE9MI=
 			</data>
 		</dict>
 		<key>Modules/Newton.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nazspb3obKhlyo8T+ru+/joCT2ikJimMlFG2KIB6gH0=
+			gb1YUMZCN8EGU68bi8Ph6xHUEvL0LAGy8WxjN8Y6VoE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
