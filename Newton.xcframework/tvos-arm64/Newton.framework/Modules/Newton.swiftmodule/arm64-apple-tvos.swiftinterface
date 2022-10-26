@@ -527,7 +527,4 @@ extension MarketPlace : Swift.Equatable {}
 extension MarketPlace : Swift.Hashable {}
 extension MarketPlace : Swift.RawRepresentable {}
 extension NWPushBase : Foundation.NSCoding {}
-extension NWStandardPush : Foundation.NSCoding {}
-extension NWUrlPush : Foundation.NSCoding {}
-extension NWBackgroundPush : Foundation.NSCoding {}
 extension NWUserMetaInfo : Foundation.NSCoding {}

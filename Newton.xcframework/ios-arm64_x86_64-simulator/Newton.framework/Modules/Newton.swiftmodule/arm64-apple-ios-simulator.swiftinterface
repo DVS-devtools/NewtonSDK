@@ -564,7 +564,4 @@ extension MarketPlace : Swift.RawRepresentable {}
 extension PushNotificationType : Swift.Equatable {}
 extension PushNotificationType : Swift.Hashable {}
 extension NWPushBase : Foundation.NSCoding {}
-extension NWStandardPush : Foundation.NSCoding {}
-extension NWUrlPush : Foundation.NSCoding {}
-extension NWBackgroundPush : Foundation.NSCoding {}
 extension NWUserMetaInfo : Foundation.NSCoding {}
