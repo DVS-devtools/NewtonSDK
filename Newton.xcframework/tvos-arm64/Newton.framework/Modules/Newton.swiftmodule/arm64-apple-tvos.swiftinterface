@@ -468,6 +468,17 @@ public struct AutoLoginToken : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum UserType : Swift.String {
+  case anonymous
+  case prospect
+  case identified
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public typealias MetaInfoCallback = (_ error: NWError?, _ metaInfo: [Swift.String : Any]?) -> ()
 public typealias SyncStateCallback = (_ error: NWError?) -> ()
 public typealias UserDeleteCallback = (_ error: NWError?) -> ()
@@ -496,6 +507,7 @@ public typealias GenerateTransientTokenCallback = (_ error: NWError?, _ token: S
   final public func getIdentityManager() throws -> NWIdentityManager
   final public func getSessionId() -> Swift.String
   final public func generateTransientToken(callback: @escaping GenerateTransientTokenCallback) throws
+  final public func getUserType() -> UserType
 }
 extension LocalErrorCodes : Swift.Equatable {}
 extension LocalErrorCodes : Swift.Hashable {}
@@ -528,3 +540,6 @@ extension MarketPlace : Swift.Hashable {}
 extension MarketPlace : Swift.RawRepresentable {}
 extension NWPushBase : Foundation.NSCoding {}
 extension NWUserMetaInfo : Foundation.NSCoding {}
+extension UserType : Swift.Equatable {}
+extension UserType : Swift.Hashable {}
+extension UserType : Swift.RawRepresentable {}
